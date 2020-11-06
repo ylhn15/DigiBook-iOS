@@ -19,6 +19,9 @@
 		266147D9255556A50039BBD7 /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D8255556A50039BBD7 /* NoteDetail.swift */; };
 		26628AA0255563DA000B0B69 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26628A9F255563DA000B0B69 /* NoteRow.swift */; };
 		26AD36F025556ED5004F666C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD36EF25556ED5004F666C /* MapView.swift */; };
+		26AD370125558ED9004F666C /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370025558ED9004F666C /* KeyboardAdaptive.swift */; };
+		26AD370625558EFB004F666C /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */; };
+		26AD370B25558F12004F666C /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370A25558F12004F666C /* UIResponder+Current.swift */; };
 		26E5C52425556C0900C0023B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5C52325556C0900C0023B /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		266147D8255556A50039BBD7 /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
 		26628A9F255563DA000B0B69 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		26AD36EF25556ED5004F666C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		26AD370025558ED9004F666C /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeightPublisher.swift; sourceTree = "<group>"; };
+		26AD370A25558F12004F666C /* UIResponder+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
 		26E5C52325556C0900C0023B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +129,9 @@
 				26628A9F255563DA000B0B69 /* NoteRow.swift */,
 				26E5C52325556C0900C0023B /* LocationManager.swift */,
 				26AD36EF25556ED5004F666C /* MapView.swift */,
+				26AD370025558ED9004F666C /* KeyboardAdaptive.swift */,
+				26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */,
+				26AD370A25558F12004F666C /* UIResponder+Current.swift */,
 			);
 			path = DigiBook;
 			sourceTree = "<group>";
@@ -289,13 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AD370125558ED9004F666C /* KeyboardAdaptive.swift in Sources */,
 				2617416725553F3700B2907A /* Persistence.swift in Sources */,
 				26628AA0255563DA000B0B69 /* NoteRow.swift in Sources */,
 				2617416A25553F3700B2907A /* DigiBook.xcdatamodeld in Sources */,
 				266147D1255552DD0039BBD7 /* NewNoteView.swift in Sources */,
 				26E5C52425556C0900C0023B /* LocationManager.swift in Sources */,
+				26AD370B25558F12004F666C /* UIResponder+Current.swift in Sources */,
 				2617416025553F3500B2907A /* ContentView.swift in Sources */,
 				26AD36F025556ED5004F666C /* MapView.swift in Sources */,
+				26AD370625558EFB004F666C /* KeyboardHeightPublisher.swift in Sources */,
 				266147D9255556A50039BBD7 /* NoteDetail.swift in Sources */,
 				2617415E25553F3500B2907A /* DigiBookApp.swift in Sources */,
 			);

@@ -16,12 +16,15 @@ struct NewNoteView: View {
 	@State private var cameramodel: String = ""
 	@State private var lens: String = ""
 	@State private var subject: String = ""
-	@State private var shutterspeed: String = ""
-	@State private var fStop: String = ""
+	@State private var shutterspeed = 0
+	@State private var fStop = 0
 	@State private var additionalNotes: String = ""
+	@State private var filmtype = 0
 	
-	var fStopPicker = ["1.0", "1.2", "1.4", "1.8", "2.0", "2.8"]
+	var fStopSelection = ["1.0", "1.2", "1.4", "1.8", "2.0", "2.8"]
 	var shutterspeedSelection = ["1/8000", "1/4000", "1/2000", "1/1000", "1/500", "1/250"]
+	var filmtypeSelection = ["Ilford HP5", "TMAX 100", "Ektar 100", "Fomapan 100", "Fomapan 200", "Portra 400", "Portra 800"]
+	
 	
 	var body: some View {
 		VStack(alignment: .leading) {
@@ -31,6 +34,16 @@ struct NewNoteView: View {
 				.textFieldStyle(RoundedBorderTextFieldStyle())
 			TextField("Subject", text: $subject)
 				.textFieldStyle(RoundedBorderTextFieldStyle())
+			VStack(spacing: 5) {
+				Text("Filmtype")
+				Picker(selection: $filmtype, label: Text("Filmtype")) {
+					ForEach(0 ..< filmtypeSelection.count) {
+						Text(self.filmtypeSelection[$0])
+					}
+				}
+				.frame(height: 100.0)
+				.clipped()
+			}
 			HStack {
 				VStack(spacing: 5) {
 					Text("Shutterspeed")
@@ -45,8 +58,8 @@ struct NewNoteView: View {
 				VStack(spacing: 5) {
 					Text("f-Stop")
 					Picker(selection: $fStop, label: Text("f-Stop")) {
-						ForEach(0 ..< fStopPicker.count) {
-							Text(self.fStopPicker[$0])
+						ForEach(0 ..< fStopSelection.count) {
+							Text(self.fStopSelection[$0])
 						}
 					}
 					.frame(width: UIScreen.main.bounds.size.width/2, height: 100.0)
@@ -57,19 +70,13 @@ struct NewNoteView: View {
 			}
 			TextField("Additional notes", text: $additionalNotes)
 				.textFieldStyle(RoundedBorderTextFieldStyle())
-			Button(action: addNote) {
-				Label("Add Item", systemImage: "plus")
-					.foregroundColor(.white)
-			}
-			Spacer()
+			
 		}
+		.padding()
+		.keyboardAdaptive()
 		.toolbar {
-			#if os(iOS)
-			EditButton()
-			#endif
 			Button(action: addNote) {
-				Label("Add Item", systemImage: "plus")
-					.foregroundColor(.white)
+				Text("Save")
 			}
 		}
 		.navigationBarTitle(Text("New Note"))
@@ -80,15 +87,16 @@ struct NewNoteView: View {
 		let longitude = locationManager.lastLocation?.coordinate.longitude
 		let latitude = locationManager.lastLocation?.coordinate.latitude
 		
+		newNote.id = UUID()
 		newNote.timestamp = Date()
 		newNote.cameramodel = self.cameramodel
 		newNote.lens = self.lens
 		newNote.subject = self.subject
-		newNote.shutterspeed = self.shutterspeed
-		newNote.fStop = self.fStop
+		newNote.shutterspeed = self.shutterspeedSelection[self.shutterspeed]
+		newNote.filmtype = self.filmtypeSelection[self.filmtype]
+		newNote.fStop = self.fStopSelection[self.fStop]
 		newNote.longitude = longitude!
 		newNote.latitude = latitude!
-		newNote.id = UUID()
 		
 		do {
 			try viewContext.save()

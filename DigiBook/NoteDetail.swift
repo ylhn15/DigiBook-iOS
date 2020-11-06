@@ -19,6 +19,7 @@ struct NoteDetail: View {
 			Divider()
 			Text(note.cameramodel!).font(.title2)
 			Text(note.lens!).font(.title2)
+			Text(note.filmtype!).font(.title2)
 			Divider()
 			HStack(alignment: .top) {
 				Text("\(note.shutterspeed!)s").font(.title3)
@@ -33,7 +34,7 @@ struct NoteDetail: View {
 
 private let itemFormatter: DateFormatter = {
 	let formatter = DateFormatter()
-	formatter.dateStyle = .short
+	formatter.dateStyle = .long
 	return formatter
 }()
 

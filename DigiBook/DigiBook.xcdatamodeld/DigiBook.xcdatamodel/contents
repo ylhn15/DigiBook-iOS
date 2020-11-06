@@ -6,6 +6,7 @@
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="additionalNotes" optional="YES" attributeType="String"/>
         <attribute name="cameramodel" optional="YES" attributeType="String"/>
+        <attribute name="filmtype" optional="YES" attributeType="String"/>
         <attribute name="fStop" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -18,6 +19,6 @@
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="Note" positionX="-63" positionY="-81" width="128" height="208"/>
+        <element name="Note" positionX="-63" positionY="-81" width="128" height="223"/>
     </elements>
 </model>
