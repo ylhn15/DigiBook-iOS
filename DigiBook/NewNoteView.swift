@@ -18,12 +18,14 @@ struct NewNoteView: View {
 	@State private var subject: String = ""
 	@State private var shutterspeed = 0
 	@State private var fStop = 0
+	@State private var shutterspeedString: String = ""
+	@State private var filmtypeString: String = ""
 	@State private var additionalNotes: String = ""
 	@State private var filmtype = 0
 	
 	var fStopSelection = ["1.0", "1.2", "1.4", "1.8", "2.0", "2.8"]
-	var shutterspeedSelection = ["1/8000", "1/4000", "1/2000", "1/1000", "1/500", "1/250"]
-	var filmtypeSelection = ["Ilford HP5", "TMAX 100", "Ektar 100", "Fomapan 100", "Fomapan 200", "Portra 400", "Portra 800"]
+	var shutterspeedSelection = ["1/8000", "1/4000", "1/2000", "1/1000", "1/500", "1/250", "1/125", "1/60", "1/30", "1/15", "1/8", "1/4", "1/2", "1", "Bulb", "Time"]
+	var filmtypeSelection = ["Ilford HP5", "TMAX 100", "Ektar 100", "Fomapan 100", "Fomapan 200", "Portra 400", "Portra 800", "Custom"]
 	
 	
 	var body: some View {
@@ -68,6 +70,14 @@ struct NewNoteView: View {
 				.frame(width: UIScreen.main.bounds.size.width/2)
 				.clipped()
 			}
+			if(self.shutterspeedSelection[self.shutterspeed] == "Bulb" || self.shutterspeedSelection[self.shutterspeed] == "Time") {
+				TextField("Custom shutterspeed", text: $shutterspeedString)
+					.textFieldStyle(RoundedBorderTextFieldStyle())
+			}
+			if(self.filmtypeSelection[self.filmtype] == "Custom") {
+				TextField("Custom film", text: $filmtypeString)
+					.textFieldStyle(RoundedBorderTextFieldStyle())
+			}
 			TextField("Additional notes", text: $additionalNotes)
 				.textFieldStyle(RoundedBorderTextFieldStyle())
 			
@@ -92,8 +102,16 @@ struct NewNoteView: View {
 		newNote.cameramodel = self.cameramodel
 		newNote.lens = self.lens
 		newNote.subject = self.subject
-		newNote.shutterspeed = self.shutterspeedSelection[self.shutterspeed]
-		newNote.filmtype = self.filmtypeSelection[self.filmtype]
+		if(self.shutterspeedString != "") {
+			newNote.shutterspeed = self.shutterspeedString
+		} else {
+			newNote.shutterspeed = self.shutterspeedSelection[self.shutterspeed]
+		}
+		if(self.filmtypeString != "") {
+			newNote.filmtype = self.filmtypeString
+		} else {
+			newNote.filmtype = self.filmtypeSelection[self.filmtype]
+		}
 		newNote.fStop = self.fStopSelection[self.fStop]
 		newNote.longitude = longitude!
 		newNote.latitude = latitude!
