@@ -23,7 +23,7 @@ struct ContentView: View {
 					Label("New Note", systemImage: "plus")
 				}
 				ForEach(notes) { note in
-					NavigationLink(destination: NoteDetail(note: note)) {
+					NavigationLink(destination: NoteDetailView(note: note)) {
 						NoteRow(note: note)
 					}
 				}
@@ -54,11 +54,6 @@ struct ContentView: View {
 	}
 }
 
-private let itemFormatter: DateFormatter = {
-	let formatter = DateFormatter()
-	formatter.dateStyle = .long
-	return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {

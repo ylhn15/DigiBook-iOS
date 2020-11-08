@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct NewNoteView: View {
+struct EditNoteView: View {
 	var note: Note?
 	
 	@ObservedObject var locationManager = LocationManager()
@@ -102,7 +102,6 @@ struct NewNoteView: View {
 		note.fStop = self.fStopSelection[self.fStop]
 		note.longitude = longitude!
 		note.latitude = latitude!
-		note.additionalNotes = self.additionalNotes
 		
 		do {
 			try viewContext.save()

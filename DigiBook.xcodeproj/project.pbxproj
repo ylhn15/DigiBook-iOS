@@ -15,13 +15,15 @@
 		2617416A25553F3700B2907A /* DigiBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2617416825553F3700B2907A /* DigiBook.xcdatamodeld */; };
 		2617417525553F3800B2907A /* DigiBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617417425553F3800B2907A /* DigiBookTests.swift */; };
 		2617418025553F3800B2907A /* DigiBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617417F25553F3800B2907A /* DigiBookUITests.swift */; };
+		26332201255813420078E92A /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26332200255813420078E92A /* EditNoteView.swift */; };
 		266147D1255552DD0039BBD7 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D0255552DD0039BBD7 /* NewNoteView.swift */; };
-		266147D9255556A50039BBD7 /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D8255556A50039BBD7 /* NoteDetail.swift */; };
+		266147D9255556A50039BBD7 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D8255556A50039BBD7 /* NoteDetailView.swift */; };
 		26628AA0255563DA000B0B69 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26628A9F255563DA000B0B69 /* NoteRow.swift */; };
 		26AD36F025556ED5004F666C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD36EF25556ED5004F666C /* MapView.swift */; };
 		26AD370125558ED9004F666C /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370025558ED9004F666C /* KeyboardAdaptive.swift */; };
 		26AD370625558EFB004F666C /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */; };
 		26AD370B25558F12004F666C /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370A25558F12004F666C /* UIResponder+Current.swift */; };
+		26AD371025559941004F666C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD370F25559941004F666C /* Helper.swift */; };
 		26E5C52425556C0900C0023B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5C52325556C0900C0023B /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,13 +59,15 @@
 		2617417B25553F3800B2907A /* DigiBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2617417F25553F3800B2907A /* DigiBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiBookUITests.swift; sourceTree = "<group>"; };
 		2617418125553F3800B2907A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26332200255813420078E92A /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		266147D0255552DD0039BBD7 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
-		266147D8255556A50039BBD7 /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
+		266147D8255556A50039BBD7 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		26628A9F255563DA000B0B69 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		26AD36EF25556ED5004F666C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		26AD370025558ED9004F666C /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
 		26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeightPublisher.swift; sourceTree = "<group>"; };
 		26AD370A25558F12004F666C /* UIResponder+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
+		26AD370F25559941004F666C /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26E5C52325556C0900C0023B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,13 +129,15 @@
 				2617416825553F3700B2907A /* DigiBook.xcdatamodeld */,
 				2617416325553F3700B2907A /* Preview Content */,
 				266147D0255552DD0039BBD7 /* NewNoteView.swift */,
-				266147D8255556A50039BBD7 /* NoteDetail.swift */,
+				26332200255813420078E92A /* EditNoteView.swift */,
+				266147D8255556A50039BBD7 /* NoteDetailView.swift */,
 				26628A9F255563DA000B0B69 /* NoteRow.swift */,
 				26E5C52325556C0900C0023B /* LocationManager.swift */,
 				26AD36EF25556ED5004F666C /* MapView.swift */,
 				26AD370025558ED9004F666C /* KeyboardAdaptive.swift */,
 				26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */,
 				26AD370A25558F12004F666C /* UIResponder+Current.swift */,
+				26AD370F25559941004F666C /* Helper.swift */,
 			);
 			path = DigiBook;
 			sourceTree = "<group>";
@@ -304,11 +310,13 @@
 				2617416A25553F3700B2907A /* DigiBook.xcdatamodeld in Sources */,
 				266147D1255552DD0039BBD7 /* NewNoteView.swift in Sources */,
 				26E5C52425556C0900C0023B /* LocationManager.swift in Sources */,
+				26332201255813420078E92A /* EditNoteView.swift in Sources */,
 				26AD370B25558F12004F666C /* UIResponder+Current.swift in Sources */,
 				2617416025553F3500B2907A /* ContentView.swift in Sources */,
 				26AD36F025556ED5004F666C /* MapView.swift in Sources */,
 				26AD370625558EFB004F666C /* KeyboardHeightPublisher.swift in Sources */,
-				266147D9255556A50039BBD7 /* NoteDetail.swift in Sources */,
+				26AD371025559941004F666C /* Helper.swift in Sources */,
+				266147D9255556A50039BBD7 /* NoteDetailView.swift in Sources */,
 				2617415E25553F3500B2907A /* DigiBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

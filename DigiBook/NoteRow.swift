@@ -12,17 +12,11 @@ struct NoteRow: View {
 	
     var body: some View {
 		VStack(alignment: .leading) {
-			Text("\(note.timestamp!, formatter: itemFormatter) \(note.subject!)").font(.title)
-			Text("\(note.cameramodel!) \(note.lens!)").font(.subheadline)
+			Text("\(note.timestamp ?? Date(), formatter: itemFormatter) \(note.subject ?? "")").font(.title)
+			Text("\(note.cameramodel ?? "") \(note.lens ?? "")").font(.subheadline)
 		}
     }
 }
-
-private let itemFormatter: DateFormatter = {
-	let formatter = DateFormatter()
-	formatter.dateStyle = .short
-	return formatter
-}()
 
 /*struct NoteRow_Previews: PreviewProvider {
     static var previews: some View {
