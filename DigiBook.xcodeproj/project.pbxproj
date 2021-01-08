@@ -16,6 +16,7 @@
 		2617417525553F3800B2907A /* DigiBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617417425553F3800B2907A /* DigiBookTests.swift */; };
 		2617418025553F3800B2907A /* DigiBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617417F25553F3800B2907A /* DigiBookUITests.swift */; };
 		26332201255813420078E92A /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26332200255813420078E92A /* EditNoteView.swift */; };
+		26353EB12559A1F5001489DB /* WrappedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26353EB02559A1F5001489DB /* WrappedMap.swift */; };
 		266147D1255552DD0039BBD7 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D0255552DD0039BBD7 /* NewNoteView.swift */; };
 		266147D9255556A50039BBD7 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266147D8255556A50039BBD7 /* NoteDetailView.swift */; };
 		26628AA0255563DA000B0B69 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26628A9F255563DA000B0B69 /* NoteRow.swift */; };
@@ -60,6 +61,7 @@
 		2617417F25553F3800B2907A /* DigiBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiBookUITests.swift; sourceTree = "<group>"; };
 		2617418125553F3800B2907A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26332200255813420078E92A /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		26353EB02559A1F5001489DB /* WrappedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedMap.swift; sourceTree = "<group>"; };
 		266147D0255552DD0039BBD7 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
 		266147D8255556A50039BBD7 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		26628A9F255563DA000B0B69 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				26628A9F255563DA000B0B69 /* NoteRow.swift */,
 				26E5C52325556C0900C0023B /* LocationManager.swift */,
 				26AD36EF25556ED5004F666C /* MapView.swift */,
+				26353EB02559A1F5001489DB /* WrappedMap.swift */,
 				26AD370025558ED9004F666C /* KeyboardAdaptive.swift */,
 				26AD370525558EFB004F666C /* KeyboardHeightPublisher.swift */,
 				26AD370A25558F12004F666C /* UIResponder+Current.swift */,
@@ -317,6 +320,7 @@
 				26AD370625558EFB004F666C /* KeyboardHeightPublisher.swift in Sources */,
 				26AD371025559941004F666C /* Helper.swift in Sources */,
 				266147D9255556A50039BBD7 /* NoteDetailView.swift in Sources */,
+				26353EB12559A1F5001489DB /* WrappedMap.swift in Sources */,
 				2617415E25553F3500B2907A /* DigiBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+	@State var showAnalogOnly = false;
 	@ObservedObject var locationManager = LocationManager()
 	@Environment(\.managedObjectContext) private var viewContext
 	@FetchRequest(
@@ -19,12 +20,17 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			List {
+				Toggle(isOn: $showAnalogOnly) {
+					Text("Analog only")
+				}
 				NavigationLink(destination: NewNoteView()) {
 					Label("New Note", systemImage: "plus")
 				}
 				ForEach(notes) { note in
-					NavigationLink(destination: NoteDetailView(note: note)) {
-						NoteRow(note: note)
+					if(!self.showAnalogOnly || note.isAnalog) {
+						NavigationLink(destination: NoteDetailView(note: note)) {
+							NoteRow(note: note)
+						}
 					}
 				}
 				.onDelete(perform: deleteItems)

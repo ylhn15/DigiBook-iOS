@@ -28,6 +28,7 @@ struct EditNoteView: View {
 	var fStopSelection = ["1.0", "1.2", "1.4", "1.8", "2.0", "2.8", "4", "5.6", "8", "11", "16", "22", "32", "45", "64", "90", "128", "180", "256"]
 	var shutterspeedSelection = ["1/8000", "1/4000", "1/2000", "1/1000", "1/500", "1/250", "1/125", "1/60", "1/30", "1/15", "1/8", "1/4", "1/2", "1", "Bulb", "Time"]
 	var filmtypeSelection = ["Ilford HP5", "Ilford FP4",  "Ilford Delta 400", "Ilford Delta 3200", "TMAX 100", "Ektar 100", "Fomapan 100", "Fomapan 200", "Portra 400", "Portra 800", "Custom"]
+	var formats = ["35mm", "120", "4x5", "8x10"]
 	
 	
 	var body: some View {

@@ -30,12 +30,17 @@ struct NoteDetailView: View {
 				Section(header: Text("Information")) {
 					Text(note.cameramodel!).font(.title2)
 					Text(note.lens!).font(.title2)
-					Text(note.filmtype!).font(.title2)
+					if(note.isAnalog) {
+						Text(note.filmtype!).font(.title2)
+					}
 				}
 				Section(header: Text("Settings")) {
 					HStack(alignment: .top) {
 						Text("\(note.shutterspeed!)s").font(.title3)
 						Text("f\(note.fStop!)").font(.title3)
+						if(!note.isAnalog) {
+							Text("ISO \(note.filmtype!)").font(.title2)
+						}
 					}
 				}
 				Text("\(note.additionalNotes!)").font(.title3)

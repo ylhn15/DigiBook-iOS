@@ -13,7 +13,20 @@ struct MapView: UIViewRepresentable {
 	
 	
 	func makeUIView(context: Context) -> MKMapView {
-		MKMapView(frame: .zero)
+		let mapView = WrappedMap()
+		mapView.onLongPress = openMap(for:)
+		return mapView
+	}
+	
+	func openMap(for coordinate: CLLocationCoordinate2D) {
+		var url = URL(string: "")
+		if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
+		{
+			url = (URL(string: "comgooglemaps://?saddr=&daddr=\(note.latitude),\(note.longitude)&directionsmode=walking")! as URL)
+		} else {
+			url = URL(string:"http://maps.apple.com/?daddr=\(note.latitude),\(note.longitude)")!
+		}
+		UIApplication.shared.open(url!)
 	}
 	
 	func updateUIView(_ uiView: MKMapView, context: Context) {
