@@ -151,7 +151,7 @@ struct NewNoteView: View {
 				note.filmtype = allOptions.options[0]["iso"]![self.iso]
 			}
 		}
-		note.fStop = self.fStopSelection[self.fStop]
+		note.fStop = allOptions.options[0]["fStop"]![self.fStop]
 		note.longitude = longitude!
 		note.latitude = latitude!
 		note.additionalNotes = self.additionalNotes
