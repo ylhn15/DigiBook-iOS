@@ -45,6 +45,8 @@ struct NewNoteView: View {
 	
 	var body: some View {
 		let allOptions = parseJson()
+		let shutterspeedOptions = allOptions.options[2]["shutterspeed"]
+		let fStopOptions = allOptions.options[1]["fStop"]
 		Form {
 			Toggle(isOn: $isAnalog){
 				if(isAnalog) {
@@ -66,11 +68,11 @@ struct NewNoteView: View {
 						}
 					}
 					Picker(selection: $format, label: Text("Format")) {
-						ForEach(0 ..< allOptions.options[0]["format"]!.count) {
-							Text(allOptions.options[0]["format"]![$0])
+						ForEach(0 ..< allOptions.options[4]["format"]!.count) {
+							Text(allOptions.options[4]["format"]![$0])
 						}
 					}
-					if(allOptions.options[0]["format"]![self.format] == "4x5") {
+					if(allOptions.options[4]["format"]![self.format] == "4x5") {
 						Picker(selection: $filmholder, label: Text("Filmholder No.")) {
 							ForEach(1 ..< 11) { i in
 								Text("\(i)")
@@ -79,26 +81,25 @@ struct NewNoteView: View {
 					}
 				} else {
 					Picker(selection: $iso, label: Text("ISO")) {
-						ForEach(0 ..< allOptions.options[0]["iso"]!.count) {
-							Text(allOptions.options[0]["iso"]![$0])
+						ForEach(0 ..< allOptions.options[3]["iso"]!.count) {
+							Text(allOptions.options[3]["iso"]![$0])
 						}
 					}
 				}
 			}
 			Section(header: Text("Settings")) {
 				Picker(selection: $shutterspeed, label: Text("Shutterspeed")) {
-					ForEach(0 ..< allOptions.options[0]["shutterspeed"]!.count) {
-						Text(allOptions.options[0]["shutterspeed"]![$0])
+					ForEach(0 ..< shutterspeedOptions!.count) {
+						Text(shutterspeedOptions![$0])
 					}
 				}
 				Picker(selection: $fStop, label: Text("f-Stop")) {
-					ForEach(0 ..< allOptions.options[0]["fStop"]!.count) {
-						Text(allOptions.options[0]["fStop"]![$0])
+					ForEach(0 ..< fStopOptions!.count) {
+						Text(fStopOptions![$0])
 					}
-					
 				}
 			}
-			if(allOptions.options[0]["shutterspeed"]![self.shutterspeed] == "Bulb" || allOptions.options[0]["shutterspeed"]![self.shutterspeed] == "Time") {
+			if(shutterspeedOptions![self.shutterspeed] == "Bulb" || shutterspeedOptions![self.shutterspeed] == "Time") {
 				TextField("Custom shutterspeed", text: $shutterspeedString)
 			}
 			if(allOptions.options[0]["filmtype"]![self.filmtype] == "Custom") {
@@ -135,10 +136,10 @@ struct NewNoteView: View {
 		if(self.shutterspeedString != "") {
 			note.shutterspeed = self.shutterspeedString
 		} else {
-			note.shutterspeed = allOptions.options[0]["shutterspeed"]![self.shutterspeed]
+			note.shutterspeed = allOptions.options[2]["shutterspeed"]![self.shutterspeed]
 		}
 		if(self.isAnalog) {
-			note.format = allOptions.options[0]["format"]![self.format]
+			note.format = allOptions.options[4]["format"]![self.format]
 			if(self.filmtypeString != "") {
 				note.filmtype = self.filmtypeString
 			} else {
@@ -148,10 +149,10 @@ struct NewNoteView: View {
 			if(self.isoString != "") {
 				note.filmtype = self.isoString
 			} else {
-				note.filmtype = allOptions.options[0]["iso"]![self.iso]
+				note.filmtype = allOptions.options[3]["iso"]![self.iso]
 			}
 		}
-		note.fStop = allOptions.options[0]["fStop"]![self.fStop]
+		note.fStop = allOptions.options[1]["fStop"]![self.fStop]
 		note.longitude = longitude!
 		note.latitude = latitude!
 		note.additionalNotes = self.additionalNotes
